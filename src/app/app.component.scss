@@ -1,0 +1,252 @@
+// Variables
+$primary-color: #d4af37;
+$secondary-color: #2c3e50;
+$text-color: #333;
+$light-color: #fff;
+$dark-color: #1a1a1a;
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif; line-height: 1.6;
+  color: $text-color;
+}
+
+// Header Styles
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba($light-color, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.reservation-btn {
+  background: $primary-color;
+  color: $light-color;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+// Hero Section
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $light-color;
+
+  .hero-content {
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.cta-btn {
+  background: $primary-color;
+  color: $light-color;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+// Featured Section
+.featured-section {
+  padding: 5rem 5%;
+  background: $light-color;
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: $secondary-color;
+  }
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dish-card {
+  background: $light-color;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    padding: 1rem;
+    color: $secondary-color;
+  }
+
+  p {
+    padding: 0 1rem 1rem;
+    color: lighten($text-color, 20%);
+  }
+}
+
+// About Section
+.about-section {
+  padding: 5rem 5%;
+  background: $secondary-color;
+  color: $light-color;
+  text-align: center;
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+  }
+}
+
+// Footer Styles
+.footer {
+  background: $dark-color;
+  color: $light-color;
+  padding: 4rem 5% 2rem;
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-section {
+    h3 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+
+    .social-link {
+      color: $light-color;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($light-color, 0.1);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      display: none;
+    }
+  }
+
+  .hero-section .hero-content {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
