@@ -1,0 +1,41 @@
+<section class="menu-section">
+  <div class="menu-header">
+    <h1>Our Menu</h1>
+    <div class="category-tabs">
+      <button 
+        *ngFor="let category of categories"
+        class="category-tab"
+        [class.active]="selectedCategory === category"
+        (click)="selectedCategory = category">
+        {{category}}
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-items" *ngFor="let category of categories">
+      <h2 class="category-title">{{category}}</h2>
+      <div class="items-grid">
+        <div class="menu-card" *ngFor="let item of getItemsByCategory(category)">
+          <div class="item-image">
+            <img [src]="item.image" [alt]="item.title">
+          </div>
+          <div class="item-details">
+            <h3>{{item.title}}</h3>
+            <p class="description">{{item.description}}</p>
+            <div class="price-info">
+              <div class="full-price">
+                <span>Full</span>
+                <strong>${{item.fullPrice}}</strong>
+              </div>
+              <div class="half-price" *ngIf="item.halfPrice">
+                <span>Half</span>
+                <strong>${{item.halfPrice}}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
